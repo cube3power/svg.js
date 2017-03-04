@@ -6,7 +6,7 @@
 * @copyright Wout Fierens <wout@mick-wout.com>
 * @license MIT
 *
-* BUILT: Fri Mar 03 2017 17:54:03 GMT+0100 (Mitteleuropäische Zeit)
+* BUILT: Sat Mar 04 2017 10:06:00 GMT+0100 (Mitteleuropäische Zeit)
 */;
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -599,8 +599,8 @@ SVG.extend(SVG.PointArray, {
 
     // recalculate position of all points according to new size
     for (i = this.value.length - 1; i >= 0; i--) {
-      this.value[i][0] = ((this.value[i][0] - box.x) * width)  / box.width  + box.x
-      this.value[i][1] = ((this.value[i][1] - box.y) * height) / box.height + box.y
+      if(box.width) this.value[i][0] = ((this.value[i][0] - box.x) * width)  / box.width  + box.x
+      if(box.height) this.value[i][1] = ((this.value[i][1] - box.y) * height) / box.height + box.y
     }
 
     return this
