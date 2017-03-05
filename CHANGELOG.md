@@ -33,6 +33,8 @@ The document follows the conventions described in [“Keep a CHANGELOG”](http:
 ### Added
 - added a plot and array method to `SVG.TextPath` (#582)
 - added `clone` method to `SVG.Array/PointArray/PathArray` (#590)
+- added `SVG.Box()`
+- added `transform()` method to boxes
 
 ### Changed
 - changed CHANGELOG to follow the conventions described in [“Keep a CHANGELOG”](http://keepachangelog.com) (#578)
@@ -43,6 +45,8 @@ The document follows the conventions described in [“Keep a CHANGELOG”](http:
 - relative value for `SVG.Number` are now calculated in its `morph` method (related #547)
 - clean up the implementation of the `initAnimation` method of the FX module (#547, #552, #584)
 - deprecated `.tbox()`. `.tbox()` now map to `.rbox()`. If you are using `.tbox()`, you can substitute it with `.rbox()` (#594, #602)
+- all boxes now accept 4 values or an object on creation
+- `el.rbox()` now always returns the right boxes in screen coordinates and has an additional paramater to transform the box into other coordinate systems
 
 ### Fixed
 - fixed a bug in the plain morphing part of `SVG.MorphObj` that is in the FX module
